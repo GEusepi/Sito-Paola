@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Dott.ssa Paola Francucci - Psicologa</title>
     <style>
         :root {
@@ -35,7 +36,6 @@
         header {
             background-color: var(--primary-color);
             color: var(--light-text);
-            padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -50,8 +50,7 @@
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 15px;
         }
         
         nav ul {
@@ -371,7 +370,10 @@
 <body>
     <header>
         <div class="header-content container">
-            <div class="logo">Dott.ssa Paola Francucci</div>
+            <div class="logo">
+                <img src="logo.png" style="height: 90px; margin-right: 10px; vertical-align: middle;">
+                <span>Dott.ssa Paola Francucci</span>
+            </div>
             <button class="mobile-menu-btn">☰</button>
             <nav id="main-nav">
                 <ul>
@@ -414,17 +416,17 @@
             <h2>Le Mie Specializzazioni</h2>
             <div class="specialization-cards">
                 <div class="specialization-card">
-                    <i>🧠</i>
+                    <i class="fa-solid fa-brain"></i>
                     <h3>Disturbi d'Ansia</h3>
                     <p>Trattamento di attacchi di panico, fobie specifiche, ansia generalizzata e disturbi ossessivo-compulsivi attraverso tecniche cognitivo-comportamentali evidence-based.</p>
                 </div>
                 <div class="specialization-card">
-                    <i>😞</i>
+                    <i class="fa-solid fa-face-frown"></i>
                     <h3>Disturbi dell'Umore</h3>
                     <p>Approccio integrato per la gestione della depressione, con interventi mirati al miglioramento del tono dell'umore e alla ristrutturazione cognitiva.</p>
                 </div>
                 <div class="specialization-card">
-                    <i>💔</i>
+                    <i class="fa-solid fa-heart-crack"></i>
                     <h3>Difficoltà Relazionali</h3>
                     <p>Supporto nelle problematiche di coppia, familiari e interpersonali, favorendo una comunicazione efficace e consapevole.</p>
                 </div>
@@ -473,23 +475,23 @@
                     <p>P.IVA: 12345678901</p>
                 </div>
                 <div class="footer-info contact-info">
-                    <h3>Contatti</h3>
-                    <p><i>📍</i> Via Roma 123, Milano</p>
-                    <p><i>📱</i> +39 123 456 7890</p>
-                    <p><i>✉️</i> info@mariarossi.it</p>
+                    <h3 style="text-align: center;">Contatti</h3>
+                    <p><i class="fa-solid fa-map-pin"></i> Via Roma 123, Montlto di castro</p>
+                    <p><i class="fa-solid fa-mobile"></i> +39 327 33 40 095</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@paolafrancucci.it</p>
                 </div>
                 <div class="footer-info">
-                    <h3>Orari</h3>
+                    <h3 style="text-align: center;">Orari</h3>
                     <p>Lunedì - Venerdì: 9:00 - 19:00</p>
                     <p>Sabato: 9:00 - 13:00</p>
                     <p>Domenica: Chiuso</p>
                 </div>
-                <div class="footer-info">
+                <div class="footer-info" style="text-align: center;">
                     <h3>Seguimi</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/p/Dottssa-Paola-Francucci-Psicologa-Psicoterapeuta-100076184676188/" aria-label="Facebook"><i>f</i></a>
-                        <a href="#" aria-label="Instagram"><i>ig</i></a>
-                        <a href="#" aria-label="LinkedIn"><i>in</i></a>
+                    <div class="social-links" style="justify-content: center;">
+                        <a href="https://www.facebook.com/p/Dottssa-Paola-Francucci-Psicologa-Psicoterapeuta-100076184676188/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -500,7 +502,7 @@
     </footer>
 
     <a href="https://wa.me/+393273340095" class="whatsapp-float" aria-label="Contattami su WhatsApp">
-        <i>💬</i>
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
