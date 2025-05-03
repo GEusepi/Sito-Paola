@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dott.ssa Paola Francucci - Psicologa</title>
+    <style>
+        :root {
+            --primary-color: #2e8b57;
+            --secondary-color: #e8f5e9;
+            --accent-color: #1b5e20;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.8)), url("/api/placeholder/1200/600") center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            padding-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--light-text);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        .about {
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .specializations {
+            background-color: var(--secondary-color);
+        }
+        
+        .specialization-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .specialization-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .specialization-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .specialization-card i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .specialization-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .services {
+            background-color: #fff;
+        }
+        
+        .service-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-item {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+        
+        .service-item h3 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .service-item:hover h3 {
+            color: var(--light-text);
+        }
+        
+        footer {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-info h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .header-content {
+                padding: 0 20px;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                height: auto;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <div class="logo">Dott.ssa Paola Francucci</div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#about">Chi Sono</a></li>
+                    <li><a href="#specializations">Specializzazioni</a></li>
+                    <li><a href="#services">Servizi</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Benvenuti nello Studio della Dott.ssa Paola Francucci</h1>
+            <p>Psicologa e Psicoterapeuta - Ti aiuto a ritrovare il tuo equilibrio</p>
+            <a href="#contact" class="cta-button">Contattami</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Chi Sono</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="C:\Users\Utente\Desktop\Sito-Paola\imagine.jpg" alt="Dott.ssa Paola Francucci">
+                </div>
+                <div class="about-text">
+                    <h3>Dott.ssa Paola Francucci</h3>
+                    <p>Sono una psicologa con oltre 10 anni di esperienza nel campo della salute mentale. Mi sono laureata con lode in Psicologia Clinica presso l'Università di Milano e ho conseguito una specializzazione in Psicoterapia Cognitivo-Comportamentale.</p>
+                    <p>Il mio approccio è centrato sulla persona e mira a creare uno spazio sicuro dove poter esplorare le difficoltà emotive e comportamentali, trovando insieme strategie efficaci per migliorare il benessere psicologico.</p>
+                    <p>Credo fortemente nel potere della relazione terapeutica come strumento di cambiamento e nella possibilità di ogni persona di realizzare il proprio potenziale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specializations" class="specializations">
+        <div class="container">
+            <h2>Le Mie Specializzazioni</h2>
+            <div class="specialization-cards">
+                <div class="specialization-card">
+                    <i>🧠</i>
+                    <h3>Disturbi d'Ansia</h3>
+                    <p>Trattamento di attacchi di panico, fobie specifiche, ansia generalizzata e disturbi ossessivo-compulsivi attraverso tecniche cognitivo-comportamentali evidence-based.</p>
+                </div>
+                <div class="specialization-card">
+                    <i>😞</i>
+                    <h3>Disturbi dell'Umore</h3>
+                    <p>Approccio integrato per la gestione della depressione, con interventi mirati al miglioramento del tono dell'umore e alla ristrutturazione cognitiva.</p>
+                </div>
+                <div class="specialization-card">
+                    <i>💔</i>
+                    <h3>Difficoltà Relazionali</h3>
+                    <p>Supporto nelle problematiche di coppia, familiari e interpersonali, favorendo una comunicazione efficace e consapevole.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>I Miei Servizi</h2>
+            <div class="service-items">
+                <div class="service-item">
+                    <h3>Consulenza Psicologica</h3>
+                    <p>Incontri individuali per affrontare momenti di difficoltà o per approfondire la conoscenza di sé stessi.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Psicoterapia</h3>
+                    <p>Percorsi strutturati di trattamento per problematiche psicologiche specifiche, con un approccio scientificamente validato.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Supporto Online</h3>
+                    <p>Sessioni di terapia a distanza tramite piattaforme sicure, per chi ha difficoltà a raggiungere lo studio o preferisce questa modalità.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Tecniche di Rilassamento</h3>
+                    <p>Training di mindfulness e rilassamento progressivo per la gestione dello stress e dell'ansia.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Seminari e Gruppi</h3>
+                    <p>Incontri tematici di gruppo su argomenti specifici per condividere esperienze e apprendere strategie efficaci.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Formazione Aziendale</h3>
+                    <p>Interventi in azienda per il miglioramento del benessere organizzativo e la gestione dello stress lavorativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Dott.ssa Paola Francucci</h3>
+                    <p>Psicologa e Psicoterapeuta</p>
+                    <p>P.IVA: 12345678901</p>
+                </div>
+                <div class="footer-info contact-info">
+                    <h3>Contatti</h3>
+                    <p><i>📍</i> Via Roma 123, Milano</p>
+                    <p><i>📱</i> +39 123 456 7890</p>
+                    <p><i>✉️</i> info@mariarossi.it</p>
+                </div>
+                <div class="footer-info">
+                    <h3>Orari</h3>
+                    <p>Lunedì - Venerdì: 9:00 - 19:00</p>
+                    <p>Sabato: 9:00 - 13:00</p>
+                    <p>Domenica: Chiuso</p>
+                </div>
+                <div class="footer-info">
+                    <h3>Seguimi</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Dottssa-Paola-Francucci-Psicologa-Psicoterapeuta-100076184676188/" aria-label="Facebook"><i>f</i></a>
+                        <a href="#" aria-label="Instagram"><i>in</i></a>
+                        <a href="#" aria-label="LinkedIn"><i>in</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dott.ssa Paola Francucci - Tutti i diritti riservati</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/+393273340095" class="whatsapp-float" aria-label="Contattami su WhatsApp">
+        <i>💬</i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        mainNav.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
