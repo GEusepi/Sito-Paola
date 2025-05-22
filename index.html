@@ -234,6 +234,115 @@
         .service-item:hover h3 {
             color: var(--light-text);
         }
+
+        /* Nuova sezione Contact Form */
+        .contact-form-section {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+        
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form-container h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-form-container p {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-color);
+            font-size: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.1);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+        }
         
         footer {
             background-color: var(--accent-color);
@@ -364,6 +473,15 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .contact-form-container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -380,6 +498,7 @@
                     <li><a href="#about">Chi Sono</a></li>
                     <li><a href="#specializations">Specializzazioni</a></li>
                     <li><a href="#services">Servizi</a></li>
+                    <li><a href="#contact-form">Contattami</a></li>
                     <li><a href="#contact">Contatti</a></li>
                 </ul>
             </nav>
@@ -390,7 +509,7 @@
         <div class="hero-content container">
             <h1>Benvenuti nello Studio della Dott.ssa Paola Francucci</h1>
             <p>Psicologa e Psicoterapeuta - Ti aiuto a ritrovare il tuo equilibrio</p>
-            <a href="#contact" class="cta-button">Contattami</a>
+            <a href="#contact-form" class="cta-button">Contattami</a>
         </div>
     </section>
 
@@ -399,13 +518,18 @@
             <h2>Chi Sono</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="imagine.jpg" alt="Dott.ssa Paola Francucci">
+                    <img src="immagine.jpg" alt="Dott.ssa Paola Francucci">
                 </div>
                 <div class="about-text">
                     <h3>Dott.ssa Paola Francucci</h3>
-                    <p>Sono una psicologa con oltre 10 anni di esperienza nel campo della salute mentale. Mi sono laureata con lode in Psicologia Clinica presso l'Università di Milano e ho conseguito una specializzazione in Psicoterapia Cognitivo-Comportamentale.</p>
-                    <p>Il mio approccio è centrato sulla persona e mira a creare uno spazio sicuro dove poter esplorare le difficoltà emotive e comportamentali, trovando insieme strategie efficaci per migliorare il benessere psicologico.</p>
-                    <p>Credo fortemente nel potere della relazione terapeutica come strumento di cambiamento e nella possibilità di ogni persona di realizzare il proprio potenziale.</p>
+                    <p>Mi chiamo Paola Francucci, sono una psicologa e psicoterapeuta iscritta all'Albo degli Psicologi del Lazio. Sono laureata in Psicologia della Salute e della Clinica presso l'Università La Sapienza di Roma e ho conseguito la specializzazione in Psicoterapia .La formazione presso la Scuola C.O.I.R.A.G., riconosciuta dal MIUR, ha un focus specifico sul metodo psicodrammatico integrato alla psicoanalisi, fornendo strumenti terapeutici sia individuali che di gruppo, con particolare attenzione all'ascolto profondo e all'esplorazione del mondo interno del paziente.
+					Da 10 anni lavoro in ambito psicologico e psicoterapeutico, offrendo supporto a adolescenti e adulti. La mia esperienza si è arricchita grazie a percorsi professionali in diversi contesti:</p>
+					<li>presso La Cura del Girasole Onlus a Roma, centro specializzato nel trattamento del disagio emotivo e psicologico in età evolutiva.</li>
+					<li>presso il Consultorio ASL di Tarquinia, dove ho svolto attività di supporto psicologico rivolto ad adolescenti e famiglie;</li>
+					<li>collaborando con il servizio di Neuropsichiatria Infantile della stessa ASL, conducendo colloqui clinici e interventi con minori e loro famiglie;</li>
+					<p>In ambito scolastico, lavoro come docente di sostegno nelle scuole superiori, dove ho maturato una solida esperienza nel supporto agli adolescenti e nella gestione delle loro diverse esigenze educative e psicologiche.
+					Il mio approccio professionale si fonda su un ascolto empatico e non giudicante, che consente di comprendere le dinamiche emotive e relazionali di ogni individuo. Credo nel valore di un percorso terapeutico personalizzato, che rispetti tempi e peculiarità, promuovendo un cambiamento autentico e duraturo.
+					Sono disponibile per colloqui in presenza o online, per accompagnarti in un percorso di conoscenza e crescita personale.</p>  
                 </div>
             </div>
         </div>
@@ -466,6 +590,55 @@
         </div>
     </section>
 
+    <!-- Nuova sezione Contact Form -->
+    <section id="contact-form" class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <h2>Mettiti in contatto con me</h2>
+                <p>Compila il modulo sottostante e ti contatterò il prima possibile per fissare un appuntamento.</p>
+                
+                <div id="success-message" class="success-message">
+                    <i class="fa-solid fa-check-circle"></i>
+                    Grazie per avermi contattato! Riceverai una conferma su WhatsApp e ti risponderò il prima possibile.
+                </div>
+                
+                <div id="error-message" class="error-message">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    Si è verificato un errore. Per favore, riprova o contattami direttamente.
+                </div>
+                
+                <form id="contact-form-element" action="https://formspree.io/f/mkgrajbv"
+				method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cognome">Cognome *</label>
+                            <input type="text" id="cognome" name="cognome" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Numero di telefono *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+39 xxx xxx xxxx">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Invia Richiesta
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
@@ -476,15 +649,14 @@
                 </div>
                 <div class="footer-info contact-info">
                     <h3 style="text-align: center;">Contatti</h3>
-                    <p><i class="fa-solid fa-map-pin"></i> Via Roma 123, Montlto di castro</p>
+                    <p><i class="fa-solid fa-map-pin"></i> Via Latina n.8 Montalto di Castro</p>
                     <p><i class="fa-solid fa-mobile"></i> +39 327 33 40 095</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@paolafrancucci.it</p>
+                    <p><i class="fa-solid fa-envelope"></i>paola.francucci@gmail.com</p>
                 </div>
                 <div class="footer-info">
                     <h3 style="text-align: center;">Orari</h3>
-                    <p>Lunedì - Venerdì: 9:00 - 19:00</p>
-                    <p>Sabato: 9:00 - 13:00</p>
-                    <p>Domenica: Chiuso</p>
+                    <p>Lunedì - Venerdì: 14:00 - 19:00</p>
+                    <p>Si riceve su appuntamento</p>                   
                 </div>
                 <div class="footer-info" style="text-align: center;">
                     <h3>Seguimi</h3>
@@ -534,7 +706,304 @@
                     }
                 });
             });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form-element');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Ottieni i valori dal form
+                const nome = document.getElementById('nome').value.trim();
+                const cognome = document.getElementById('cognome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                
+                // Valida i campi
+                if (!nome || !cognome || !email || !telefono) {
+                    showError('Tutti i campi sono obbligatori');
+                    return;
+                }
+                
+                // Valida l'email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError('Inserisci un indirizzo email valido');
+                    return;
+                }
+                
+                // Disabilita il bottone durante l'invio
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Invio in corso...';
+                
+                // Simula l'invio (in un'applicazione reale, qui invieresti i dati al server)
+                setTimeout(() => {
+                    // Crea il messaggio WhatsApp
+                    const whatsappMessage = `Nuova richiesta di contatto dal sito web:
+					Nome: ${nome} ${cognome}
+					Email: ${email}
+					Telefono: ${telefono}
+					Data: ${new Date().toLocaleString('it-IT')}`;
+                    
+                    // Apri WhatsApp con il messaggio (questo funziona solo se l'utente ha WhatsApp installato)
+                    const whatsappUrl = `https://wa.me/393273340095?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    // Mostra il messaggio di successo
+                    showSuccess();
+                    
+                    // Apri WhatsApp in una nuova scheda
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Reset del form
+                    contactForm.reset();
+                    
+                    // Riabilita il bottone
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Invia Richiesta';
+                    
+                    // Salva i dati localmente per il backup (opzionale)
+                    const contactData = {
+                        nome,
+                        cognome,
+                        email,
+                        telefono,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // Salva nel localStorage (in un'applicazione reale, invieresti questi dati al server)
+                    let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+                    contacts.push(contactData);
+                    localStorage.setItem('contacts', JSON.stringify(contacts));
+                    
+                    console.log('Nuova richiesta di contatto salvata:', contactData);
+                    
+                }, 1500);
+            });
+
+            function showSuccess() {
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+
+             function showError(message) {
+                errorMessage.innerHTML = `<i class="fa-solid fa-exclamation-triangle"></i> ${message}`;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        mainNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // Contact form handling con multiple opzioni di notifica
+            const contactForm = document.getElementById('contact-form-element');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Ottieni i valori dal form
+                const nome = document.getElementById('nome').value.trim();
+                const cognome = document.getElementById('cognome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                
+                // Valida i campi
+                if (!nome || !cognome || !email || !telefono) {
+                    showError('Tutti i campi sono obbligatori');
+                    return;
+                }
+                
+                // Valida l'email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showError('Inserisci un indirizzo email valido');
+                    return;
+                }
+                
+                // Disabilita il bottone durante l'invio
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Invio in corso...';
+                
+                try {
+                    // OPZIONE 1: Formspree (sostituisci YOUR_FORM_ID con il tuo ID)
+                    // Per attivare: registrati su formspree.io e sostituisci l'URL                    
+                    const formspreeResponse = await fetch('https://formspree.io/f/mkgrajbv', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            nome: nome,
+                            cognome: cognome,
+                            email: email,
+                            telefono: telefono,
+                            messaggio: `Nuova richiesta di appuntamento da ${nome} ${cognome}`,
+                            _subject: 'Nuova richiesta di appuntamento dal sito web'
+                        })
+                    });                   
+
+                    // OPZIONE 2: Web3Forms (sostituisci YOUR_ACCESS_KEY con la tua chiave)
+                    // Per attivare: registrati su web3forms.com e sostituisci la chiave
+                    /*
+                    const web3FormsResponse = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            access_key: 'YOUR_ACCESS_KEY',
+                            name: `${nome} ${cognome}`,
+                            email: email,
+                            phone: telefono,
+                            message: `Nuova richiesta di appuntamento`,
+                            subject: 'Nuova richiesta dal sito web'
+                        })
+                    });
+                    */
+
+                    // OPZIONE 3: EmailJS (sostituisci con i tuoi parametri)
+                    // Per attivare: registrati su emailjs.com e configura il servizio
+                    /*
+                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                        nome: nome,
+                        cognome: cognome,
+                        email: email,
+                        telefono: telefono,
+                        to_email: 'info@paolafrancucci.it'
+                    });
+                    */
+
+                    // SIMULAZIONE per il demo (rimuovi in produzione)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    // Crea il messaggio WhatsApp
+                    const whatsappMessage = `🔔 NUOVA RICHIESTA APPUNTAMENTO
+
+					👤 Nome: ${nome} ${cognome}
+					📧 Email: ${email}
+					📱 Telefono: ${telefono}
+					📅 Data richiesta: ${new Date().toLocaleString('it-IT')}
+					
+					Messaggio inviato dal sito web.`;
+                    
+                    // URL WhatsApp con messaggio precompilato
+                    //const whatsappUrl = `https://wa.me/393273340095?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    // Mostra il messaggio di successo
+                    showSuccess();
+                    
+                    // Apri WhatsApp in una nuova scheda
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // OPZIONE 4: Salva in Google Sheets (tramite Google Apps Script)
+                    // Implementazione tramite webhook Google Apps Script
+                    try {
+                        await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                nome: nome,
+                                cognome: cognome,
+                                email: email,
+                                telefono: telefono,
+                                timestamp: new Date().toISOString()
+                            })
+                        });
+                    } catch (error) {
+                        console.log('Google Sheets non configurato o non disponibile');
+                    }
+                    
+                    // Reset del form
+                    contactForm.reset();
+                    
+                    // Salva backup locale
+                    const contactData = {
+                        nome,
+                        cognome,
+                        email,
+                        telefono,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+                    contacts.push(contactData);
+                    localStorage.setItem('contacts', JSON.stringify(contacts));
+                    
+                    console.log('✅ Richiesta di contatto salvata:', contactData);
+                    
+                } catch (error) {
+                    console.error('Errore nell\'invio:', error);
+                    showError('Si è verificato un errore nell\'invio. Prova a contattarmi direttamente su WhatsApp.');
+                } finally {
+                    // Riabilita il bottone
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Invia Richiesta';
+                }
+            });
+
+            function showSuccess() {
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            function showError(message) {
+                errorMessage.innerHTML = `<i class="fa-solid fa-exclamation-triangle"></i> ${message}`;
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            // Funzione per visualizzare le richieste salvate (per debug - rimuovi in produzione)
+            window.viewContacts = function() {
+                const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+                console.log('Richieste di contatto salvate:', contacts);
+                return contacts;
+            };
         });
     </script>
+	
 </body>
 </html>
