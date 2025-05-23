@@ -563,29 +563,21 @@
             <h2>I Miei Servizi</h2>
             <div class="service-items">
                 <div class="service-item">
-                    <h3>Consulenza Psicologica</h3>
-                    <p>Incontri individuali per affrontare momenti di difficoltà o per approfondire la conoscenza di sé stessi.</p>
+                    <h3>Sostegno psicologico e psicoterapia individuale per preadolescenti, adolescenti e adulti</h3>
+                    <p>Spazi di ascolto che favoriscono l’elaborazione del disagio, la comprensione di vissuti complessi e la messa in parola di ciò che spesso si esprime attraverso il corpo, il silenzio o il sintomo. Il lavoro si costruisce a partire dalla soggettività di ciascuno, nel rispetto dei suoi tempi e dei suoi interrogativi.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Psicoterapia</h3>
-                    <p>Percorsi strutturati di trattamento per problematiche psicologiche specifiche, con un approccio scientificamente validato.</p>
-                </div>
+                    <h3>Sostegno alla coppia e alla genitorialità</h3>
+                    <p>Interventi pensati per accompagnare le coppie nei momenti di difficoltà relazionale, nei percorsi di adozione, infertilità o PMA, così come nei passaggi complessi legati alla funzione genitoriale. Uno spazio per ascoltare ciò che, nella relazione, può diventare fonte di sofferenza e fatica.</p>
+                </div>                
                 <div class="service-item">
+                    <h3>Conduzione di gruppi terapeutici a orientamento psicoanalitico</h3>
+                    <p>Il gruppo, in questa prospettiva, si configura come un luogo di parola, scambio e rispecchiamento. Ho maturato esperienza nella conduzione di gruppi di psicodramma analitico lacaniano: un dispositivo clinico che, attraverso la scena simbolica, permette l’emersione di vissuti profondi e il lavoro sui legami inconsci.</p>
+                </div> 
+				<div class="service-item">
                     <h3>Supporto Online</h3>
                     <p>Sessioni di terapia a distanza tramite piattaforme sicure, per chi ha difficoltà a raggiungere lo studio o preferisce questa modalità.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Tecniche di Rilassamento</h3>
-                    <p>Training di mindfulness e rilassamento progressivo per la gestione dello stress e dell'ansia.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Seminari e Gruppi</h3>
-                    <p>Incontri tematici di gruppo su argomenti specifici per condividere esperienze e apprendere strategie efficaci.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Formazione Aziendale</h3>
-                    <p>Interventi in azienda per il miglioramento del benessere organizzativo e la gestione dello stress lavorativo.</p>
-                </div>
+                </div>				
             </div>
         </div>
     </section>
@@ -607,7 +599,7 @@
                     Si è verificato un errore. Per favore, riprova o contattami direttamente.
                 </div>
                 
-                <form id="contact-form-element" action="https://formspree.io/f/mkgrajbv"
+                <form id="contact-form-element" action="https://formspree.io/f/mwpojwgb"
 				method="POST">
                     <div class="form-row">
                         <div class="form-group">
@@ -645,7 +637,7 @@
                 <div class="footer-info">
                     <h3>Dott.ssa Paola Francucci</h3>
                     <p>Psicologa e Psicoterapeuta</p>
-                    <p>P.IVA: 12345678901</p>
+                    <p>P.IVA 02060660566</p>
                 </div>
                 <div class="footer-info contact-info">
                     <h3 style="text-align: center;">Contatti</h3>
@@ -737,48 +729,8 @@
                 
                 // Disabilita il bottone durante l'invio
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Invio in corso...';
-                
-                // Simula l'invio (in un'applicazione reale, qui invieresti i dati al server)
-                setTimeout(() => {
-                    // Crea il messaggio WhatsApp
-                    const whatsappMessage = `Nuova richiesta di contatto dal sito web:
-					Nome: ${nome} ${cognome}
-					Email: ${email}
-					Telefono: ${telefono}
-					Data: ${new Date().toLocaleString('it-IT')}`;
-                    
-                    // Apri WhatsApp con il messaggio (questo funziona solo se l'utente ha WhatsApp installato)
-                    const whatsappUrl = `https://wa.me/393273340095?text=${encodeURIComponent(whatsappMessage)}`;
-                    
-                    // Mostra il messaggio di successo
-                    showSuccess();
-                    
-                    // Apri WhatsApp in una nuova scheda
-                    window.open(whatsappUrl, '_blank');
-                    
-                    // Reset del form
-                    contactForm.reset();
-                    
-                    // Riabilita il bottone
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Invia Richiesta';
-                    
-                    // Salva i dati localmente per il backup (opzionale)
-                    const contactData = {
-                        nome,
-                        cognome,
-                        email,
-                        telefono,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    // Salva nel localStorage (in un'applicazione reale, invieresti questi dati al server)
-                    let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
-                    contacts.push(contactData);
-                    localStorage.setItem('contacts', JSON.stringify(contacts));
-                    
-                    console.log('Nuova richiesta di contatto salvata:', contactData);
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Invio in corso...';               
+             
                     
                 }, 1500);
             });
@@ -796,212 +748,7 @@
                 errorMessage.style.display = 'block';
                 successMessage.style.display = 'none';
                 setTimeout(() => {
-                    errorMessage.style.display = 'none';
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNav = document.getElementById('main-nav');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        mainNav.classList.remove('active');
-                    }
-                });
-            });
-
-            // Contact form handling con multiple opzioni di notifica
-            const contactForm = document.getElementById('contact-form-element');
-            const submitBtn = document.getElementById('submit-btn');
-            const successMessage = document.getElementById('success-message');
-            const errorMessage = document.getElementById('error-message');
-
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Ottieni i valori dal form
-                const nome = document.getElementById('nome').value.trim();
-                const cognome = document.getElementById('cognome').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const telefono = document.getElementById('telefono').value.trim();
-                
-                // Valida i campi
-                if (!nome || !cognome || !email || !telefono) {
-                    showError('Tutti i campi sono obbligatori');
-                    return;
-                }
-                
-                // Valida l'email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    showError('Inserisci un indirizzo email valido');
-                    return;
-                }
-                
-                // Disabilita il bottone durante l'invio
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Invio in corso...';
-                
-                try {
-                    // OPZIONE 1: Formspree (sostituisci YOUR_FORM_ID con il tuo ID)
-                    // Per attivare: registrati su formspree.io e sostituisci l'URL                    
-                    const formspreeResponse = await fetch('https://formspree.io/f/mwpojwgb', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            nome: nome,
-                            cognome: cognome,
-                            email: email,
-                            telefono: telefono,
-                            messaggio: `Nuova richiesta di appuntamento da ${nome} ${cognome}`,
-                            _subject: 'Nuova richiesta di appuntamento dal sito web'
-                        })
-                    });                   
-
-                    // OPZIONE 2: Web3Forms (sostituisci YOUR_ACCESS_KEY con la tua chiave)
-                    // Per attivare: registrati su web3forms.com e sostituisci la chiave
-                    /*
-                    const web3FormsResponse = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            access_key: 'YOUR_ACCESS_KEY',
-                            name: `${nome} ${cognome}`,
-                            email: email,
-                            phone: telefono,
-                            message: `Nuova richiesta di appuntamento`,
-                            subject: 'Nuova richiesta dal sito web'
-                        })
-                    });
-                    */
-
-                    // OPZIONE 3: EmailJS (sostituisci con i tuoi parametri)
-                    // Per attivare: registrati su emailjs.com e configura il servizio
-                    /*
-                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-                        nome: nome,
-                        cognome: cognome,
-                        email: email,
-                        telefono: telefono,
-                        to_email: 'info@paolafrancucci.it'
-                    });
-                    */
-
-                    // SIMULAZIONE per il demo (rimuovi in produzione)
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-
-                    // Crea il messaggio WhatsApp
-                    const whatsappMessage = `🔔 NUOVA RICHIESTA APPUNTAMENTO
-
-					👤 Nome: ${nome} ${cognome}
-					📧 Email: ${email}
-					📱 Telefono: ${telefono}
-					📅 Data richiesta: ${new Date().toLocaleString('it-IT')}
-					
-					Messaggio inviato dal sito web.`;
-                    
-                    // URL WhatsApp con messaggio precompilato
-                    //const whatsappUrl = `https://wa.me/393273340095?text=${encodeURIComponent(whatsappMessage)}`;
-                    
-                    // Mostra il messaggio di successo
-                    showSuccess();
-                    
-                    // Apri WhatsApp in una nuova scheda
-                    window.open(whatsappUrl, '_blank');
-                    
-                    // OPZIONE 4: Salva in Google Sheets (tramite Google Apps Script)
-                    // Implementazione tramite webhook Google Apps Script
-                    try {
-                        await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                            method: 'POST',
-                            mode: 'no-cors',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                nome: nome,
-                                cognome: cognome,
-                                email: email,
-                                telefono: telefono,
-                                timestamp: new Date().toISOString()
-                            })
-                        });
-                    } catch (error) {
-                        console.log('Google Sheets non configurato o non disponibile');
-                    }
-                    
-                    // Reset del form
-                    contactForm.reset();
-                    
-                    // Salva backup locale
-                    const contactData = {
-                        nome,
-                        cognome,
-                        email,
-                        telefono,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
-                    contacts.push(contactData);
-                    localStorage.setItem('contacts', JSON.stringify(contacts));
-                    
-                    console.log('✅ Richiesta di contatto salvata:', contactData);
-                    
-                } catch (error) {
-                    console.error('Errore nell\'invio:', error);
-                    showError('Si è verificato un errore nell\'invio. Prova a contattarmi direttamente su WhatsApp.');
-                } finally {
-                    // Riabilita il bottone
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Invia Richiesta';
-                }
-            });
-
-            function showSuccess() {
-                successMessage.style.display = 'block';
-                errorMessage.style.display = 'none';
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
-            }
-
-            function showError(message) {
-                errorMessage.innerHTML = `<i class="fa-solid fa-exclamation-triangle"></i> ${message}`;
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 5000);
-            }
-
-            // Funzione per visualizzare le richieste salvate (per debug - rimuovi in produzione)
-            window.viewContacts = function() {
-                const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
-                console.log('Richieste di contatto salvate:', contacts);
-                return contacts;
-            };
+                    errorMessage.style.display = 'none';       
         });
     </script>
 	
